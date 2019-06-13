@@ -1,9 +1,14 @@
-package main_test
+package main
 
-import "testing"
+import (
+	"testing"
+)
 
-func TestOnePlusOne(t *testing.T) {
-	if 1+1 != 2 {
-		t.Fatalf("Da faq")
+func TestGetENV(t *testing.T) {
+	expectedResult := "/Users/tuterdust/go"
+	actualResult := getenv("GOPATH")
+	if expectedResult != actualResult {
+		t.Fatalf("Expected %s but got %s", expectedResult, actualResult)
 	}
+
 }
